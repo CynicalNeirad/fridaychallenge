@@ -32,7 +32,7 @@ public class HomeController {
     @GetMapping("/add")
     public String resumeform(Model model) {
         model.addAttribute("userinfo", userinfoBook.findAll());
-        model.addAttribute("education", educationBook.findAll());
+        model.addAttribute("educationstring", educationBook.findAll());
         model.addAttribute("skill", skillsBook.findAll());
         model.addAttribute("experience", experienceBook.findAll());
 
