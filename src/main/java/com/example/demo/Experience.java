@@ -15,18 +15,18 @@ public class Experience {
         this.experienceID = experienceID;
     }
 
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long experienceID;
 
-    private String experience;
+    public String getExperienceString() {
+        return experienceString;
+    }
+
+    public void setExperienceString(String experienceString) {
+        this.experienceString = experienceString;
+    }
+
+    private String experienceString;
 
 }
