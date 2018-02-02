@@ -104,6 +104,7 @@ public class HomeController {
     @PostMapping("/processeducation")
     public String processEducation( @Valid Education education, BindingResult result) {
         System.out.println(education.getId());
+        System.out.println("help");
         if (result.hasErrors()) {
             return "/addeducation";
         }
