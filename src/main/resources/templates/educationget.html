@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Education</title>
+</head>
+<body>
+<form action = "#"
+      th:action="@{/processeducation}"
+      th:object="${education}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    Education :<input type="text" th:field= "*{education}" />
+    <span th:if="${#fields.hasErrors('education')}"
+          th:errors="*{education}"></span><br/>
+    <br />
+    <input type="submit" values="Submit" />
+</form>
+</body>
+</html>

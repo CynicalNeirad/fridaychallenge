@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Resume</title>
+</head>
+<body>
+<a href="/add">Create a new Resume</a><br/>
+
+<table>
+    <tr th:each="userinfo : ${userinfo}">
+        <td th:text="${userinfo.name}"></td>
+        <td th:text="${userinfo.email}"></td>
+    </tr>
+
+    <th>Skills:</th>
+    <a th:href="@{/addskills}">Add a new skill</a>
+    <tr th:each="skill : ${skill}">
+        <td th:text="${skill.skill}"></td> <br/>
+        <td th:text="${skill.proficency}"></td>
+        <a th:href="@{/update/{id}(id=${skill.id})}">Update this skills</a>
+        <a th:href="@{/delete/{id}(id=${skill.id})}">Delete this skills</a>
+    </tr>
+
+
+    <th>Educational Achievements:</th>
+    <a th:href="@{/addeducation}">Add a new Education</a>
+    <tr th:each="education : ${education}">
+        <td th:text="${education.education}"></td>
+        <a th:href="@{/update/{id}(id=${education.id})}">Update this education</a>
+        <a th:href="@{/delete/{id}(id=${education.id})}">Delete this Education</a>
+    </tr>
+
+
+    <th>Job Experience:</th>
+    <a th:href="@{/addexperience}">Add a new Job Expirence</a>
+    <tr th:each="experience : ${experience}">
+        <td th:text="${experience.experience}"></td>
+        <a th:href="@{/update/{id}(id=${experience.id})}">Update this Experience</a>
+        <a th:href="@{/delete/{id}(id=${experience.id})}">Delete this Experience</a>
+
+    </tr>
+</table>
+
+
+</body>
+</html>
